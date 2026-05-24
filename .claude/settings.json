@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(/Users/cano/repos/canoq-site/best-practices.md)",
+      "Edit(/Users/cano/repos/canoq-site/best-practices.md)",
+      "Write(/Users/cano/repos/canoq-site/.claude/skills/**)",
+      "Edit(/Users/cano/repos/canoq-site/.claude/skills/**)",
+      "Skill(commit)",
+      "Skill(commit:*)",
+      "Skill(dev-feature)",
+      "Skill(dev-feature:*)",
+      "Skill(post-mortem)",
+      "Skill(post-mortem:*)",
+      "Skill(update-config)",
+      "Skill(update-config:*)"
+    ]
+  }
+}
