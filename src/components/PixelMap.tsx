@@ -71,11 +71,11 @@ export const PixelMap = ({ experiences, activeId, onSelect }: Props) => {
               onMouseLeave={() => setHoveredId(null)}
               style={{ default: { cursor: 'pointer' }, hover: { cursor: 'pointer' }, pressed: {} }}
             >
-              {/* Outer glow ring */}
-              <circle
-                r={isActive ? 14 : 10}
-                fill={isActive ? 'rgba(220, 38, 38, 0.2)' : 'rgba(220, 38, 38, 0.12)'}
-              />
+              {/* Radar ring */}
+              <circle fill="rgba(220, 38, 38, 0.5)">
+                <animate attributeName="r" from={isActive ? 8 : 6} to={isActive ? 24 : 20} dur="2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite" />
+              </circle>
               {/* Main pin */}
               <circle
                 r={isActive ? 7 : 5}
