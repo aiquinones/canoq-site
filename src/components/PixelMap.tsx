@@ -74,12 +74,12 @@ export const PixelMap = ({ experiences, activeId, onSelect }: Props) => {
               {/* Outer glow ring */}
               <circle
                 r={isActive ? 14 : 10}
-                fill={isActive ? 'rgba(96, 165, 250, 0.25)' : 'rgba(147, 197, 253, 0.2)'}
+                fill={isActive ? 'rgba(220, 38, 38, 0.2)' : 'rgba(220, 38, 38, 0.12)'}
               />
               {/* Main pin */}
               <circle
                 r={isActive ? 7 : 5}
-                fill={isActive ? 'rgba(96, 165, 250, 0.9)' : 'rgba(147, 197, 253, 0.7)'}
+                fill={isActive ? 'rgba(220, 38, 38, 0.95)' : 'rgba(220, 38, 38, 0.65)'}
               />
 
               {isHovered && (
