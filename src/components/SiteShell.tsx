@@ -68,7 +68,7 @@ export const SiteShell = () => {
       {/* Main content */}
       <div
         className={`transition-all duration-300 ease-in-out ${
-          activeExp ? 'flex-1' : 'flex-1 flex items-center justify-center'
+          activeExp ? 'flex-1 flex flex-col' : 'flex-1 flex items-center justify-center'
         }`}
       >
         {activeExp ? (
