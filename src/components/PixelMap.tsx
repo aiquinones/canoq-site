@@ -7,53 +7,6 @@ import { styles } from '@/lib/styles'
 
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json'
 
-type MarkerProps = {
-  exp: Experience
-  isActive: boolean
-  isHovered: boolean
-  onSelect: (id: string) => void
-  onHover: (id: string | null) => void
-}
-
-const PixelMapMarker = ({ exp, isActive, isHovered, onSelect, onHover }: MarkerProps) => {
-  const tooltipFlip = exp.location.lon > -85
-
-  return (
-    <Marker
-      coordinates={[exp.location.lon, exp.location.lat]}
-      onClick={() => onSelect(exp.id)}
-      onMouseEnter={() => onHover(exp.id)}
-      onMouseLeave={() => onHover(null)}
-      style={{ default: { cursor: 'pointer' }, hover: { cursor: 'pointer' }, pressed: {} }}
-    >
-      {/* Radar ring */}
-      <circle fill="rgba(220, 38, 38, 0.5)">
-        <animate attributeName="r" from={isActive ? 8 : 6} to={isActive ? 24 : 20} dur="2s" repeatCount="indefinite" />
-        <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite" />
-      </circle>
-
-      {/* Main pin */}
-      <circle
-        r={isActive ? 7 : 5}
-        fill={isActive ? 'rgba(220, 38, 38, 0.95)' : 'rgba(220, 38, 38, 0.65)'}
-      />
-
-      {/* Tooltip */}
-      {isHovered && (
-        <g transform={tooltipFlip ? 'translate(-216, -48)' : 'translate(20, -48)'}>
-          <rect width="200" height="68" rx="6" fill="white" stroke="#e5e7eb" strokeWidth="1.5" />
-          <text x="12" y="26" fontSize="18" fontWeight="600" fill="#111827" style={{ fontFamily: 'var(--font-geist-sans, system-ui)' }}>
-            {exp.title}
-          </text>
-          <text x="12" y="50" fontSize="14" fill="#9ca3af" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
-            {exp.tag}
-          </text>
-        </g>
-      )}
-    </Marker>
-  )
-}
-
 type Props = {
   experiences: Experience[]
   activeId: string
@@ -108,5 +61,52 @@ export const PixelMap = ({ experiences, activeId, onSelect }: Props) => {
         ))}
       </ComposableMap>
     </div>
+  )
+}
+
+type MarkerProps = {
+  exp: Experience
+  isActive: boolean
+  isHovered: boolean
+  onSelect: (id: string) => void
+  onHover: (id: string | null) => void
+}
+
+const PixelMapMarker = ({ exp, isActive, isHovered, onSelect, onHover }: MarkerProps) => {
+  const tooltipFlip = exp.location.lon > -85
+
+  return (
+    <Marker
+      coordinates={[exp.location.lon, exp.location.lat]}
+      onClick={() => onSelect(exp.id)}
+      onMouseEnter={() => onHover(exp.id)}
+      onMouseLeave={() => onHover(null)}
+      style={{ default: { cursor: 'pointer' }, hover: { cursor: 'pointer' }, pressed: {} }}
+    >
+      {/* Radar ring */}
+      <circle fill="rgba(220, 38, 38, 0.5)">
+        <animate attributeName="r" from={isActive ? 8 : 6} to={isActive ? 24 : 20} dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite" />
+      </circle>
+
+      {/* Main pin */}
+      <circle
+        r={isActive ? 7 : 5}
+        fill={isActive ? 'rgba(220, 38, 38, 0.95)' : 'rgba(220, 38, 38, 0.65)'}
+      />
+
+      {/* Tooltip */}
+      {isHovered && (
+        <g transform={tooltipFlip ? 'translate(-216, -48)' : 'translate(20, -48)'}>
+          <rect width="200" height="68" rx="6" fill="white" stroke="#e5e7eb" strokeWidth="1.5" />
+          <text x="12" y="26" fontSize="18" fontWeight="600" fill="#111827" style={{ fontFamily: 'var(--font-geist-sans, system-ui)' }}>
+            {exp.title}
+          </text>
+          <text x="12" y="50" fontSize="14" fill="#9ca3af" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+            {exp.tag}
+          </text>
+        </g>
+      )}
+    </Marker>
   )
 }
