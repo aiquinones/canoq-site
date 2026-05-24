@@ -42,6 +42,12 @@ If you can't scan it in 10 seconds and understand the structure, it needs refact
 **Place helper/sub-components below the main export.**
 If a file has one primary exported component and one or more private helpers, define the helpers after the main export. The reader sees the public API first.
 
+## Content
+
+**Never write copy that should come from the author.**
+On a personal site, biographical and descriptive text has value precisely because it's human-written.
+AI-generated copy is not a draft — it's a counterfeit. Use lorem ipsum as an honest placeholder until the real text is ready.
+
 ## General
 
 **Readable > clever.**
