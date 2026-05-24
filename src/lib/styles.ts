@@ -14,7 +14,13 @@ export const styles = {
   navItemTag: 'text-xs font-mono text-muted',
 
   // Detail
-  detailRoot: 'flex-1 px-16 py-12',
+  detailRoot: 'flex-1 px-8 py-12 md:px-16',
   detailTitle: 'text-3xl font-bold tracking-tight text-foreground mb-8',
   detailBody: 'text-base leading-relaxed text-foreground/60 max-w-prose',
+
+  // Mobile nav
+  mobileTopBar: 'flex items-center px-6 py-4 border-b border-foreground/10 md:hidden',
+  hamburgerButton: 'flex items-center justify-center text-foreground hover:opacity-70 transition-opacity',
+  mobileNavOverlay: 'fixed inset-0 z-40 bg-black/50 md:hidden transition-opacity duration-300',
+  mobileNavPanel: 'fixed inset-y-0 left-0 z-50 bg-background transition-transform duration-300 ease-in-out md:hidden',
 } as const
