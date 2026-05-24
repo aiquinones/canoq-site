@@ -6,20 +6,42 @@ type Props = {
   experience: Experience
   experiences: Experience[]
   onSelect: (id: string) => void
+  prevExp: Experience | null
+  nextExp: Experience | null
 }
 
-const LOREM = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`
-
-export const ExperienceDetail = ({ experience, experiences, onSelect }: Props) => (
+export const ExperienceDetail = ({ experience, experiences, onSelect, prevExp, nextExp }: Props) => (
   <div className={styles.detailRoot}>
     <div key={experience.id} className={`${styles.detailTextPane} animate-fade-up`}>
-      <h2 className={styles.detailTitle}>{experience.title}</h2>
-      <p className={styles.detailBody}>{LOREM}</p>
+      <div className={styles.detailContent}>
+        <h2 className={styles.detailTitle}>{experience.title}</h2>
+        {experience.description.split('\n\n').map((para, i) => (
+          <p key={i} className={styles.detailBody}>{para}</p>
+        ))}
+        <div className={styles.mobileExpNav}>
+          <MobileNavBtn direction="prev" exp={prevExp} onSelect={onSelect} />
+          <MobileNavBtn direction="next" exp={nextExp} onSelect={onSelect} />
+        </div>
+      </div>
     </div>
-    <PixelMap experiences={experiences} activeId={experience.id} onSelect={onSelect} />
+    <div className={styles.detailMapWrapper}>
+      <PixelMap experiences={experiences} activeId={experience.id} onSelect={onSelect} />
+    </div>
+  </div>
+)
+
+type NavBtnProps = {
+  direction: 'prev' | 'next'
+  exp: Experience | null
+  onSelect: (id: string) => void
+}
+
+const MobileNavBtn = ({ direction, exp, onSelect }: NavBtnProps) => (
+  <div className={`flex-1 ${direction === 'next' ? 'flex justify-end' : ''}`}>
+    {exp && (
+      <button className={styles.mobileExpNavBtn} onClick={() => onSelect(exp.id)}>
+        {direction === 'prev' ? `← ${exp.title}` : `${exp.title} →`}
+      </button>
+    )}
   </div>
 )

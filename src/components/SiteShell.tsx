@@ -20,6 +20,9 @@ export const SiteShell = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
   const activeExp = experiences.find((e) => e.id === activeId) ?? null
+  const currentIndex = experiences.findIndex((e) => e.id === activeId)
+  const prevExp = currentIndex > 0 ? experiences[currentIndex - 1] : null
+  const nextExp = currentIndex < experiences.length - 1 ? experiences[currentIndex + 1] : null
 
   const handleSelect = (id: string) => {
     setActiveId(id)
@@ -83,7 +86,21 @@ export const SiteShell = () => {
                 <HamburgerIcon />
               </button>
             </div>
-            <ExperienceDetail experience={activeExp} experiences={experiences} onSelect={setActiveId} />
+
+            {/* Mobile back to home */}
+            <div className={styles.mobileBackRow}>
+              <button className={styles.mobileBackBtn} onClick={handleBack} aria-label="Back to home">
+                ← home
+              </button>
+            </div>
+
+            <ExperienceDetail
+              experience={activeExp}
+              experiences={experiences}
+              onSelect={setActiveId}
+              prevExp={prevExp}
+              nextExp={nextExp}
+            />
           </>
         ) : (
           <LandingPage onSelectExp={setActiveId} />
