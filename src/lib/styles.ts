@@ -17,6 +17,7 @@ export const styles = {
   detailRoot: 'flex-1 flex overflow-hidden',
   detailTextPane: 'flex-[2] px-8 md:px-16 overflow-y-auto flex flex-col justify-center',
   detailMapPane: 'flex-[1] border-l border-foreground/10',
+  detailMapWrapper: 'hidden md:flex flex-[1]',
   detailTitle: 'text-3xl font-bold tracking-tight text-foreground mb-8',
   detailBody: 'text-base leading-relaxed text-foreground/60 max-w-prose',
 
@@ -25,4 +26,10 @@ export const styles = {
   hamburgerButton: 'flex items-center justify-center text-foreground hover:opacity-70 transition-opacity',
   mobileNavOverlay: 'fixed inset-0 z-40 bg-black/50 md:hidden transition-opacity duration-300',
   mobileNavPanel: 'fixed inset-y-0 left-0 z-50 bg-background transition-transform duration-300 ease-in-out md:hidden',
+
+  // Mobile detail navigation
+  mobileBackRow: 'px-6 pt-5 pb-1 md:hidden',
+  mobileBackBtn: 'flex items-center gap-1.5 text-sm text-foreground/50 hover:text-foreground transition-colors',
+  mobileExpNav: 'flex justify-between items-center px-6 py-5 border-t border-foreground/10 md:hidden',
+  mobileExpNavBtn: 'flex items-center gap-1.5 text-sm font-medium text-foreground/60 hover:text-foreground transition-colors',
 } as const

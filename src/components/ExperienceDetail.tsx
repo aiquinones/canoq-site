@@ -20,6 +20,8 @@ export const ExperienceDetail = ({ experience, experiences, onSelect }: Props) =
       <h2 className={styles.detailTitle}>{experience.title}</h2>
       <p className={styles.detailBody}>{LOREM}</p>
     </div>
-    <PixelMap experiences={experiences} activeId={experience.id} onSelect={onSelect} />
+    <div className={styles.detailMapWrapper}>
+      <PixelMap experiences={experiences} activeId={experience.id} onSelect={onSelect} />
+    </div>
   </div>
 )
