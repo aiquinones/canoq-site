@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { styles } from '@/lib/styles'
 import type { Experience } from '@/lib/experiences'
 
@@ -10,8 +11,16 @@ type Props = {
 
 export const LeftNav = ({ experiences, activeId, onSelect, onBack }: Props) => (
   <nav className={styles.navRoot}>
-    <button onClick={onBack} className={styles.navBackButton}>
+    <button onClick={onBack} className={`${styles.navBackButton} flex items-center justify-between w-full`}>
       Cano Q
+      <Image
+        src="/profile.jpg"
+        alt="Cano Q"
+        width={32}
+        height={32}
+        className="rounded-full object-cover shrink-0"
+        style={{ width: 32, height: 32, objectPosition: 'center 65%' }}
+      />
     </button>
 
     <div>
