@@ -39,7 +39,8 @@ Run `npx tsc --noEmit` before committing.
 
 ### 5. Commit + PR
 - Stage and commit with a conventional commit message
-- Open a PR with a clear summary and test plan
+- Push the branch and immediately open a PR with a clear summary and test plan
+- Always do this — don't wait for the user to ask
 
 ### 6. Optional Review
 Ask the user:
