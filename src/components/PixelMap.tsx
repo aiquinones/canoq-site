@@ -83,19 +83,19 @@ export const PixelMap = ({ experiences, activeId, onSelect }: Props) => {
               />
 
               {isHovered && (
-                <g transform={tooltipFlip ? 'translate(-136, -32)' : 'translate(16, -32)'}>
+                <g transform={tooltipFlip ? 'translate(-216, -48)' : 'translate(20, -48)'}>
                   <rect
-                    width="120"
-                    height="42"
-                    rx="4"
+                    width="200"
+                    height="68"
+                    rx="6"
                     fill="white"
                     stroke="#e5e7eb"
-                    strokeWidth="1"
+                    strokeWidth="1.5"
                   />
                   <text
-                    x="8"
-                    y="17"
-                    fontSize="11"
+                    x="12"
+                    y="26"
+                    fontSize="18"
                     fontWeight="600"
                     fill="#111827"
                     style={{ fontFamily: 'var(--font-geist-sans, system-ui)' }}
@@ -103,9 +103,9 @@ export const PixelMap = ({ experiences, activeId, onSelect }: Props) => {
                     {exp.title}
                   </text>
                   <text
-                    x="8"
-                    y="31"
-                    fontSize="10"
+                    x="12"
+                    y="50"
+                    fontSize="14"
                     fill="#9ca3af"
                     style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}
                   >
