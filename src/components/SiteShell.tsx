@@ -35,7 +35,7 @@ export const SiteShell = () => {
     <div className="flex min-h-screen">
       {/* Desktop left nav — hidden on mobile */}
       <div
-        className={`hidden md:overflow-hidden md:transition-[width] md:duration-300 md:ease-in-out ${activeExp ? 'md:w-64' : 'md:w-0'}`}
+        className={`hidden md:block md:overflow-hidden md:transition-[width] md:duration-300 md:ease-in-out ${activeExp ? 'md:w-64' : 'md:w-0'}`}
       >
         {activeExp && (
           <LeftNav
