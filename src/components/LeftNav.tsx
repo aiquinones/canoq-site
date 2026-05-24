@@ -23,7 +23,7 @@ export const LeftNav = ({ experiences, activeId, onSelect, onBack }: Props) => (
               <p className={activeId === exp.id ? styles.navItemTitleActive : styles.navItemTitle}>
                 {exp.title}
               </p>
-              <p className="text-xs text-foreground/40">{exp.subtitle}</p>
+              <p className="text-xs text-foreground/40 whitespace-pre-line">{exp.subtitle}</p>
             </div>
             <p className={styles.navItemTag}>{exp.tag}</p>
           </button>

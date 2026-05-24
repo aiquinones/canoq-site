@@ -24,12 +24,13 @@ src/
     SiteShell           # 'use client' — owns activeId state, orchestrates layout transition
     LandingPage         # Hero + Experience + Links (home view)
     LeftNav             # Slide-in nav: "Cano Q" back button + experience list
-    ExperienceDetail    # Detail pane: experience name + body content
+    ExperienceDetail    # Detail pane: 3/4 text + 1/4 PixelMap; receives experience, experiences[], onSelect
+    PixelMap            # 'use client' — pixel/dotted SVG world map (Americas); pins per experience with hover tooltip + click-to-select
     ExperienceItem      # title / subtitle / tag row, accepts onClick
     ExternalLink        # external anchor with ↗, opens in new tab
     TypingAnimation     # typewriter effect, accepts words[]
   lib/
-    experiences.ts      # Experience type + data array (source of truth)
+    experiences.ts      # Experience type (includes location: {lat, lon}) + data array (source of truth)
     styles.ts           # Shared Tailwind className constants
 ```
 
