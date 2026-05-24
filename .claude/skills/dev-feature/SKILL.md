@@ -37,21 +37,24 @@ Follow `best-practices.md` throughout:
 
 Run `npx tsc --noEmit` before committing.
 
-### 5. Commit + PR
+### 5. Update CLAUDE.md
+If the feature added or removed files, components, or `lib/` modules, update the Project Structure section in `CLAUDE.md` to match.
+
+### 6. Commit + PR
 - Stage and commit with a conventional commit message
 - Push the branch and immediately open a PR with a clear summary and test plan
 - Always do this — don't wait for the user to ask
 
-### 6. Optional Review
+### 7. Optional Review
 Ask the user:
 > "Want me to spawn a Haiku agent to review the PR? It'll cost a small amount (~$0.01)."
 
 If yes: spawn a `code-reviewer` subagent pointing at the current branch diff.
 Present findings. Iterate if needed.
 
-### 7. Iterate
+### 8. Iterate
 Address any feedback. Push updates to the PR branch.
 
-### 8. Post-mortem prompt
+### 9. Post-mortem prompt
 Once the user signals the PR is merged, ask:
 > "Want to run `/post-mortem` to capture nits from this session and update best-practices.md?"
