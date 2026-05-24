@@ -35,6 +35,7 @@ const Home = () => {
           Links
         </p>
         <div className={styles.externalLinkContainer}>
+          <ExternalLink href="https://github.com/aiquinones" label="GitHub" />
           <ExternalLink href="https://www.linkedin.com/in/aiquinones/" label="LinkedIn" />
           <ExternalLink href="https://www.instagram.com/canoq" label="Instagram" />
           <ExternalLink href="https://x.com/itscanoq" label="X" />
