@@ -14,7 +14,9 @@ export const styles = {
   navItemTag: 'text-xs font-mono text-muted',
 
   // Detail
-  detailRoot: 'flex-1 px-8 py-12 md:px-16',
+  detailRoot: 'flex-1 flex overflow-hidden',
+  detailTextPane: 'flex-[3] px-8 py-12 md:px-16 overflow-y-auto',
+  detailMapPane: 'flex-[1] border-l border-foreground/10 min-h-0',
   detailTitle: 'text-3xl font-bold tracking-tight text-foreground mb-8',
   detailBody: 'text-base leading-relaxed text-foreground/60 max-w-prose',
 
