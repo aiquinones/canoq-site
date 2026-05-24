@@ -94,23 +94,13 @@ export const SiteShell = () => {
               </button>
             </div>
 
-            <ExperienceDetail experience={activeExp} experiences={experiences} onSelect={setActiveId} />
-
-            {/* Mobile prev/next experience nav */}
-            <div className={styles.mobileExpNav}>
-              {prevExp ? (
-                <button className={styles.mobileExpNavBtn} onClick={() => setActiveId(prevExp.id)}>
-                  ← {prevExp.title}
-                </button>
-              ) : (
-                <span />
-              )}
-              {nextExp && (
-                <button className={styles.mobileExpNavBtn} onClick={() => setActiveId(nextExp.id)}>
-                  {nextExp.title} →
-                </button>
-              )}
-            </div>
+            <ExperienceDetail
+              experience={activeExp}
+              experiences={experiences}
+              onSelect={setActiveId}
+              prevExp={prevExp}
+              nextExp={nextExp}
+            />
           </>
         ) : (
           <LandingPage onSelectExp={setActiveId} />
