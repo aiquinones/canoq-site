@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { TypingAnimation } from '@/components/TypingAnimation'
 import { ExternalLink } from '@/components/ExternalLink'
 import { ExperienceItem } from '@/components/ExperienceItem'
@@ -12,7 +13,17 @@ export const LandingPage = ({ onSelectExp }: Props) => (
   <main className="px-8 py-24 max-w-2xl w-full flex flex-col gap-20">
     {/* Hero */}
     <section>
-      <h1 className={styles.heroHeader}>Cano Q</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-8xl font-bold tracking-tighter text-foreground">Cano Q</h1>
+        <Image
+          src="/profile.jpg"
+          alt="Cano Q"
+          width={112}
+          height={112}
+          className="rounded-full object-cover shrink-0"
+          style={{ width: 112, height: 112, objectPosition: 'center 65%' }}
+        />
+      </div>
       <p className="text-xl font-mono text-muted mb-10">
         <TypingAnimation words={['software engineer', 'NLP researcher', 'builder']} />
       </p>
