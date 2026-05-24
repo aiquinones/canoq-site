@@ -17,8 +17,8 @@ export const experiences: Experience[] = [
   {
     id: 'puc',
     title: 'PUC',
-    subtitle: 'MSc. NLP — syntactic patterns of Spanish BERT',
-    tag: 'research',
+    subtitle: 'BSc. Computer Science · Focus on NLP',
+    tag: 'education',
     location: { lat: -33.44, lon: -70.62 },
   },
 ]
