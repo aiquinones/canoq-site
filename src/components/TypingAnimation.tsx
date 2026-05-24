@@ -2,16 +2,18 @@
 
 import { useEffect, useState } from 'react'
 
-const WORDS = ['software engineer', 'NLP researcher', 'builder', 'language nerd']
-
 type Phase = 'typing' | 'pausing' | 'deleting'
 
-export const TypingAnimation = () => {
+type Props = {
+  words: string[]
+}
+
+export const TypingAnimation = ({ words }: Props) => {
   const [wordIndex, setWordIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [phase, setPhase] = useState<Phase>('typing')
 
-  const word = WORDS[wordIndex]
+  const word = words[wordIndex]
 
   useEffect(() => {
     if (phase === 'typing') {
@@ -28,7 +30,7 @@ export const TypingAnimation = () => {
         const t = setTimeout(() => setCharIndex(c => c - 1), 40)
         return () => clearTimeout(t)
       }
-      setWordIndex(i => (i + 1) % WORDS.length)
+      setWordIndex(i => (i + 1) % words.length)
       setPhase('typing')
     }
   }, [phase, charIndex, word])

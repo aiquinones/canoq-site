@@ -1,4 +1,6 @@
 import { TypingAnimation } from '@/components/TypingAnimation'
+import { ExternalLink } from '@/components/ExternalLink'
+import { ExperienceItem } from '@/components/ExperienceItem'
 
 const Home = () => {
   return (
@@ -9,7 +11,7 @@ const Home = () => {
           Cano Q
         </h1>
         <p className="text-xl font-mono text-muted mb-10">
-          <TypingAnimation />
+          <TypingAnimation words={['software engineer', 'NLP researcher', 'builder']} />
         </p>
         <p className="text-base leading-relaxed text-foreground/70 max-w-sm">
           Engineer at Microsoft working on Copilot for SharePoint & OneDrive.
@@ -23,24 +25,8 @@ const Home = () => {
           Experience
         </p>
         <div className="flex flex-col gap-5">
-          <div className="flex justify-between items-start">
-            <div>
-              <p className="font-medium text-foreground">Microsoft</p>
-              <p className="text-sm text-foreground/50">
-                Copilot · SharePoint & OneDrive
-              </p>
-            </div>
-            <p className="text-sm font-mono text-muted">current</p>
-          </div>
-          <div className="flex justify-between items-start">
-            <div>
-              <p className="font-medium text-foreground">PUC</p>
-              <p className="text-sm text-foreground/50">
-                MSc. NLP — syntactic patterns of Spanish BERT
-              </p>
-            </div>
-            <p className="text-sm font-mono text-muted">research</p>
-          </div>
+          <ExperienceItem title="Microsoft" subtitle="Copilot · SharePoint & OneDrive" tag="current" />
+          <ExperienceItem title="PUC" subtitle="MSc. NLP — syntactic patterns of Spanish BERT" tag="research" />
         </div>
       </section>
 
@@ -50,30 +36,9 @@ const Home = () => {
           Links
         </p>
         <div className="flex gap-8">
-          <a
-            href="https://www.linkedin.com/in/aiquinones/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-mono text-foreground/60 hover:text-foreground transition-colors"
-          >
-            LinkedIn ↗
-          </a>
-          <a
-            href="https://www.instagram.com/canoq"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-mono text-foreground/60 hover:text-foreground transition-colors"
-          >
-            Instagram ↗
-          </a>
-          <a
-            href="https://x.com/itscanoq"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-mono text-foreground/60 hover:text-foreground transition-colors"
-          >
-            X ↗
-          </a>
+          <ExternalLink href="https://www.linkedin.com/in/aiquinones/" label="LinkedIn" />
+          <ExternalLink href="https://www.instagram.com/canoq" label="Instagram" />
+          <ExternalLink href="https://x.com/itscanoq" label="X" />
         </div>
       </section>
     </main>
