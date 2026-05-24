@@ -19,25 +19,29 @@ export const ExperienceDetail = ({ experience, experiences, onSelect, prevExp, n
           <p key={i} className={styles.detailBody}>{para}</p>
         ))}
         <div className={styles.mobileExpNav}>
-          <div className="flex-1">
-            {prevExp && (
-              <button className={styles.mobileExpNavBtn} onClick={() => onSelect(prevExp.id)}>
-                ← {prevExp.title}
-              </button>
-            )}
-          </div>
-          <div className="flex-1 flex justify-end">
-            {nextExp && (
-              <button className={styles.mobileExpNavBtn} onClick={() => onSelect(nextExp.id)}>
-                {nextExp.title} →
-              </button>
-            )}
-          </div>
+          <MobileNavBtn direction="prev" exp={prevExp} onSelect={onSelect} />
+          <MobileNavBtn direction="next" exp={nextExp} onSelect={onSelect} />
         </div>
       </div>
     </div>
     <div className={styles.detailMapWrapper}>
       <PixelMap experiences={experiences} activeId={experience.id} onSelect={onSelect} />
     </div>
+  </div>
+)
+
+type NavBtnProps = {
+  direction: 'prev' | 'next'
+  exp: Experience | null
+  onSelect: (id: string) => void
+}
+
+const MobileNavBtn = ({ direction, exp, onSelect }: NavBtnProps) => (
+  <div className={`flex-1 ${direction === 'next' ? 'flex justify-end' : ''}`}>
+    {exp && (
+      <button className={styles.mobileExpNavBtn} onClick={() => onSelect(exp.id)}>
+        {direction === 'prev' ? `← ${exp.title}` : `${exp.title} →`}
+      </button>
+    )}
   </div>
 )
