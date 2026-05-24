@@ -3,8 +3,8 @@
     "allow": [
       "Write(/Users/cano/repos/canoq-site/best-practices.md)",
       "Edit(/Users/cano/repos/canoq-site/best-practices.md)",
-      "Write(/Users/cano/repos/canoq-site/.claude/skills/**)",
-      "Edit(/Users/cano/repos/canoq-site/.claude/skills/**)",
+      "Write(/Users/cano/repos/canoq-site/.claude/**)",
+      "Edit(/Users/cano/repos/canoq-site/.claude/**)",
       "Skill(commit)",
       "Skill(commit:*)",
       "Skill(dev-feature)",
@@ -12,7 +12,10 @@
       "Skill(post-mortem)",
       "Skill(post-mortem:*)",
       "Skill(update-config)",
-      "Skill(update-config:*)"
+      "Skill(update-config:*)",
+      "Bash(ls /Users/cano/.claude/skills/)",
+      "Read(//Users/cano/.claude/skills/**)",
+      "Edit(~/.claude/skills/dev-feature/**)"
     ]
   }
 }

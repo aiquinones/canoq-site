@@ -17,15 +17,20 @@ Personal site for Cano Q (AI Quinones). Minimalistic, techy personal page inspir
 ```
 src/
   app/
-    layout.tsx       # Root layout + metadata
-    page.tsx         # Home page — should stay lean and readable
-    globals.css      # Tailwind v4 theme + CSS variables
+    layout.tsx          # Root layout + metadata
+    page.tsx            # Thin shell — renders <SiteShell />
+    globals.css         # Tailwind v4 theme + CSS variables
   components/
-    ExperienceItem   # title / subtitle / tag row
-    ExternalLink     # external anchor with ↗, opens in new tab
-    TypingAnimation  # typewriter effect, accepts words[]
+    SiteShell           # 'use client' — owns activeId state, orchestrates layout transition
+    LandingPage         # Hero + Experience + Links (home view)
+    LeftNav             # Slide-in nav: "Cano Q" back button + experience list
+    ExperienceDetail    # Detail pane: experience name + body content
+    ExperienceItem      # title / subtitle / tag row, accepts onClick
+    ExternalLink        # external anchor with ↗, opens in new tab
+    TypingAnimation     # typewriter effect, accepts words[]
   lib/
-    styles.ts        # Shared Tailwind className constants
+    experiences.ts      # Experience type + data array (source of truth)
+    styles.ts           # Shared Tailwind className constants
 ```
 
 ## Development
