@@ -1,6 +1,7 @@
 import { TypingAnimation } from '@/components/TypingAnimation'
 import { ExternalLink } from '@/components/ExternalLink'
 import { ExperienceItem } from '@/components/ExperienceItem'
+import { styles } from '@/lib/styles'
 
 const Home = () => {
   return (
@@ -21,7 +22,7 @@ const Home = () => {
 
       {/* Work */}
       <section>
-        <p className="text-xs font-mono uppercase tracking-widest text-muted mb-6">
+        <p className={styles.sectionLabel}>
           Experience
         </p>
         <div className="flex flex-col gap-5">
@@ -32,7 +33,7 @@ const Home = () => {
 
       {/* Links */}
       <section>
-        <p className="text-xs font-mono uppercase tracking-widest text-muted mb-6">
+        <p className={styles.sectionLabel}>
           Links
         </p>
         <div className="flex gap-8">

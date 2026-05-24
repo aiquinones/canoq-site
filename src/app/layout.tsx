@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Cano",
   description:
-    "Software engineer at Microsoft building Copilot for SharePoint & OneDrive.",
+    "Engineer at Microsoft working on Copilot for SharePoint & OneDrive. Masters in NLP from PUC — syntactic patterns in Spanish BERT.",
 };
 
 export default function RootLayout({
