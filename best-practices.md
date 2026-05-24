@@ -37,6 +37,11 @@ Even then, prefer: `const Home = () => ...; export default Home`.
 Sections clearly labeled with comments, props passed cleanly, no inline style strings.
 If you can't scan it in 10 seconds and understand the structure, it needs refactoring.
 
+## Components (continued)
+
+**Place helper/sub-components below the main export.**
+If a file has one primary exported component and one or more private helpers, define the helpers after the main export. The reader sees the public API first.
+
 ## General
 
 **Readable > clever.**
