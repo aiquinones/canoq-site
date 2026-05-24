@@ -5,7 +5,7 @@ import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps
 import type { Experience } from '@/lib/experiences'
 import { styles } from '@/lib/styles'
 
-const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
+const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json'
 
 type Props = {
   experiences: Experience[]
