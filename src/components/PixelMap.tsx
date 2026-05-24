@@ -30,11 +30,11 @@ export const PixelMap = ({ experiences, activeId, onSelect }: Props) => {
             id="dot-pattern"
             x="0"
             y="0"
-            width="14"
-            height="14"
+            width="11"
+            height="11"
             patternUnits="userSpaceOnUse"
           >
-            <rect x="3" y="3" width="5" height="5" fill="#d1d5db" />
+            <rect x="2.5" y="2.5" width="5" height="5" fill="#d1d5db" />
           </pattern>
         </defs>
 
