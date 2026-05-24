@@ -15,7 +15,7 @@ export const styles = {
 
   // Detail
   detailRoot: 'flex-1 flex overflow-hidden',
-  detailTextPane: 'flex-[3] px-8 md:px-16 overflow-y-auto flex flex-col justify-center',
+  detailTextPane: 'flex-[2] px-8 md:px-16 overflow-y-auto flex flex-col justify-center',
   detailMapPane: 'flex-[1] border-l border-foreground/10',
   detailTitle: 'text-3xl font-bold tracking-tight text-foreground mb-8',
   detailBody: 'text-base leading-relaxed text-foreground/60 max-w-prose',
