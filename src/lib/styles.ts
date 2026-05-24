@@ -6,7 +6,7 @@ export const styles = {
   externalLinkContainer: 'flex gap-8',
 
   // Nav
-  navRoot: 'w-64 shrink-0 border-r border-foreground/10 px-8 py-12 flex flex-col gap-8',
+  navRoot: 'w-64 shrink-0 border-r border-foreground/10 px-8 py-12 flex flex-col gap-8 h-full',
   navBackButton: 'text-xl font-bold tracking-tight text-foreground hover:opacity-70 transition-opacity text-left',
   navItem: 'flex justify-between items-start w-full text-left cursor-pointer py-1 group',
   navItemTitle: 'font-medium text-foreground/50 group-hover:text-foreground transition-colors',
