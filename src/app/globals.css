@@ -6,12 +6,18 @@
   --muted: #888888;
 }
 
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-fade-up: fade-up 0.35s ease-out;
 }
 
 @media (prefers-color-scheme: dark) {

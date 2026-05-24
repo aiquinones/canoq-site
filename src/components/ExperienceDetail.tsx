@@ -16,7 +16,7 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 
 export const ExperienceDetail = ({ experience, experiences, onSelect }: Props) => (
   <div className={styles.detailRoot}>
-    <div className={styles.detailTextPane}>
+    <div key={experience.id} className={`${styles.detailTextPane} animate-fade-up`}>
       <h2 className={styles.detailTitle}>{experience.title}</h2>
       <p className={styles.detailBody}>{LOREM}</p>
     </div>
