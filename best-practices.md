@@ -12,8 +12,10 @@ Examples: `ExperienceItem`, `ExternalLink`, `TypingAnimation`.
 `TypingAnimation` takes `words[]`. `ExperienceItem` takes `title`, `subtitle`, `tag`.
 If you find yourself editing a component to change content, the data should be a prop instead.
 
-**Keep components small and single-purpose.**
-A component that does two things should probably be two components.
+**Split JSX trees into named sub-components for readability, even when not reused.**
+A component that takes more than ~15 lines to render probably has a natural seam.
+Naming the pieces makes the parent scannable without requiring the reader to parse raw JSX.
+Define private sub-components *below* the main export — the public API stays at the top.
 
 ## Styles
 
@@ -37,10 +39,6 @@ Even then, prefer: `const Home = () => ...; export default Home`.
 Sections clearly labeled with comments, props passed cleanly, no inline style strings.
 If you can't scan it in 10 seconds and understand the structure, it needs refactoring.
 
-## Components (continued)
-
-**Place helper/sub-components below the main export.**
-If a file has one primary exported component and one or more private helpers, define the helpers after the main export. The reader sees the public API first.
 
 ## Content
 
