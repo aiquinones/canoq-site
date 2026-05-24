@@ -19,16 +19,20 @@ export const ExperienceDetail = ({ experience, experiences, onSelect, prevExp, n
           <p key={i} className={styles.detailBody}>{para}</p>
         ))}
         <div className={styles.mobileExpNav}>
-          {prevExp && (
-            <button className={styles.mobileExpNavBtn} onClick={() => onSelect(prevExp.id)}>
-              ← {prevExp.title}
-            </button>
-          )}
-          {nextExp && (
-            <button className={styles.mobileExpNavBtn} onClick={() => onSelect(nextExp.id)}>
-              {nextExp.title} →
-            </button>
-          )}
+          <div className="flex-1">
+            {prevExp && (
+              <button className={styles.mobileExpNavBtn} onClick={() => onSelect(prevExp.id)}>
+                ← {prevExp.title}
+              </button>
+            )}
+          </div>
+          <div className="flex-1 flex justify-end">
+            {nextExp && (
+              <button className={styles.mobileExpNavBtn} onClick={() => onSelect(nextExp.id)}>
+                {nextExp.title} →
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

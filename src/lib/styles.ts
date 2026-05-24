@@ -31,6 +31,6 @@ export const styles = {
   // Mobile detail navigation
   mobileBackRow: 'px-6 pt-5 pb-1 md:hidden',
   mobileBackBtn: 'flex items-center gap-1.5 text-sm text-foreground/50 hover:text-foreground transition-colors',
-  mobileExpNav: 'flex justify-center gap-4 mt-12 md:hidden',
+  mobileExpNav: 'flex mt-12 md:hidden',
   mobileExpNavBtn: 'flex items-center gap-2 text-base font-medium text-foreground/60 hover:text-foreground transition-colors border border-foreground/15 rounded-2xl px-5 py-3 hover:border-foreground/40',
 } as const
