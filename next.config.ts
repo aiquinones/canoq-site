@@ -16,11 +16,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/projects/crux',
-        destination: `${CRUX_APP_URL}/projects/crux`,
+        destination: `${CRUX_APP_URL}`,
       },
       {
         source: '/projects/crux/:path*',
-        destination: `${CRUX_APP_URL}/projects/crux/:path*`,
+        destination: `${CRUX_APP_URL}/:path*`,
       },
     ];
   },
