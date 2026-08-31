@@ -73,6 +73,14 @@ export const LogoEasterEgg = ({ label, children }: LogoEasterEggProps) => {
           <div className={leaving ? styles.arrivalLeaving : styles.arrival}>
             <div className={styles.shake}>
               <Image
+                className={styles.backdrop}
+                src="/rumbling-tulio.jpeg"
+                alt=""
+                fill
+                sizes="100vw"
+                priority
+              />
+              <Image
                 className={styles.painting}
                 src="/rumbling-tulio.jpeg"
                 alt=""

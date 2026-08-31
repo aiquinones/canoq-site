@@ -65,8 +65,9 @@
    while it is still easing in. */
 .shake {
   position: absolute;
-  /* Bleeds past the viewport so the shake never exposes an edge. */
-  inset: -5%;
+  /* No bleed needed: the painting is contained, so the shake moves it against
+     the solid backdrop rather than off an edge. */
+  inset: 0;
   animation: temblor 110ms steps(2, end) infinite;
   transform-origin: center;
 }
@@ -79,11 +80,21 @@
 }
 
 .painting {
-  object-fit: cover;
-  /* The painting is portrait and the screen usually is not, so cover crops it
-     vertically. Biased downward to keep Tulio in frame on wide windows. */
-  object-position: center 72%;
+  /* contain everywhere, so no edge of the painting is ever cropped. The gap
+     that leaves is filled by .backdrop rather than by dead black. */
+  object-fit: contain;
+  object-position: center;
 }
+
+/* A blurred, dimmed copy of the same painting fills whatever contain leaves
+   over — the screen is fully covered without cropping the real thing. */
+.backdrop {
+  object-fit: cover;
+  object-position: center;
+  filter: blur(26px) brightness(0.5) saturate(1.1);
+  transform: scale(1.18);
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .shake { animation: none; }
