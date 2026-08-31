@@ -1,5 +1,6 @@
 import type { Party, PartyDetail } from '@/lib/birthday';
 import { Marca31 } from '@/components/Marca31';
+import { LogoEasterEgg } from '@/components/LogoEasterEgg';
 import styles from '@/app/birthday26/birthday.module.css';
 
 type BirthdayInviteProps = {
@@ -13,7 +14,9 @@ export const BirthdayInvite = ({ party }: BirthdayInviteProps) => (
       <TopRail channel={party.channel} />
 
       <div className={styles.hero}>
-        <Marca31 />
+        <LogoEasterEgg label="31 años">
+          <Marca31 />
+        </LogoEasterEgg>
         <p className={styles.bajoMarca}>{party.tagline}</p>
       </div>
 
