@@ -32,11 +32,9 @@
   position: fixed;
   inset: 0;
   z-index: 80;
-  display: grid;
-  place-items: center;
   pointer-events: none;
-  padding: 20px;
-  background: rgba(20, 17, 11, 0.42);
+  overflow: hidden;
+  background: #14110b;
   animation: velo 320ms ease-out both;
 }
 .overlayLeaving { animation: veloFuera 400ms ease-in both; }
@@ -44,8 +42,16 @@
 @keyframes veloFuera { from { opacity: 1 } to { opacity: 0 } }
 
 /* Outer element carries the arrival and the exit. */
-.arrival { animation: llegar 440ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
-.arrivalLeaving { animation: partir 400ms cubic-bezier(0.5, 0, 0.75, 0) both; }
+.arrival {
+  position: absolute;
+  inset: 0;
+  animation: llegar 440ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.arrivalLeaving {
+  position: absolute;
+  inset: 0;
+  animation: partir 400ms cubic-bezier(0.5, 0, 0.75, 0) both;
+}
 @keyframes llegar {
   from { opacity: 0; transform: scale(0.55) translateY(-38px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
@@ -58,6 +64,9 @@
 /* Inner element shakes independently, so the painting is already rumbling
    while it is still easing in. */
 .shake {
+  position: absolute;
+  /* Bleeds past the viewport so the shake never exposes an edge. */
+  inset: -5%;
   animation: temblor 110ms steps(2, end) infinite;
   transform-origin: center;
 }
@@ -70,13 +79,10 @@
 }
 
 .painting {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: min(88vw, 460px);
-  max-height: 78vh;
-  border: 4px solid #14110b;
-  box-shadow: 0 18px 0 rgba(20, 17, 11, 0.28);
+  object-fit: cover;
+  /* The painting is portrait and the screen usually is not, so cover crops it
+     vertically. Biased downward to keep Tulio in frame on wide windows. */
+  object-position: center 72%;
 }
 
 @media (prefers-reduced-motion: reduce) {

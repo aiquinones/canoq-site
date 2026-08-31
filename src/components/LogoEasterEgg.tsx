@@ -76,8 +76,8 @@ export const LogoEasterEgg = ({ label, children }: LogoEasterEggProps) => {
                 className={styles.painting}
                 src="/rumbling-tulio.jpeg"
                 alt=""
-                width={459}
-                height={668}
+                fill
+                sizes="100vw"
                 priority
               />
             </div>
