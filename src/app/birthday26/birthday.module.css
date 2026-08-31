@@ -1,0 +1,259 @@
+/* Visual language for the invitation.
+
+   Deliberately isolated in a CSS module rather than Tailwind: this page shares
+   no design tokens with the rest of the site (its own palette, its own fonts,
+   its own broadcast-graphics idiom), so keeping it here means none of it leaks
+   into globals.css. */
+
+.page {
+  --amarillo: #fad13e;
+  --amarillo-hondo: #e3b527;
+  --tinta: #14110b;
+  --tinta-suave: #4a3f27;
+  --rojo: #d8321f;
+  --papel: #fff6dc;
+
+  min-height: 100vh;
+  background-color: var(--amarillo);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(20, 17, 11, 0.055) 0 1px,
+    rgba(20, 17, 11, 0) 1px 4px
+  );
+  color: var(--tinta);
+  font-family: var(--font-cuerpo), Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+.transmision {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* ---------- top / bottom rails ---------- */
+.riel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-chyron), Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--tinta);
+  padding: 16px 0 9px;
+  margin: 0;
+}
+.rielPie {
+  border-bottom: none;
+  border-top: 3px solid var(--tinta);
+  padding: 11px 0 0;
+  color: var(--tinta-suave);
+}
+.riel span { white-space: nowrap; }
+.sep { opacity: 0.45; }
+.flexible {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  opacity: 0.62;
+}
+.vivo {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--rojo);
+  color: #fff;
+  padding: 4px 9px 3px;
+  letter-spacing: 0.18em;
+}
+.punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: latir 1.7s steps(1, end) infinite;
+}
+@keyframes latir { 0%, 55% { opacity: 1 } 56%, 100% { opacity: 0.15 } }
+
+/* ---------- logo lockup ---------- */
+.hero { display: flex; flex-direction: column; gap: 16px; }
+.lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(100%, 430px);
+  margin: 14px auto 0;
+}
+.lockup svg { display: block; width: 100%; height: auto; overflow: visible; }
+.marca { filter: drop-shadow(0 5px 0 rgba(20, 17, 11, 0.14)); }
+.wordmark text {
+  font-family: var(--font-display), "Century Gothic", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 76px;
+  fill: var(--tinta);
+}
+.bajoMarca {
+  text-align: center;
+  font-family: var(--font-chyron), Arial, sans-serif;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin: 0;
+}
+
+/* ---------- red band ---------- */
+.banda {
+  display: flex;
+  font-family: var(--font-chyron), Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  box-shadow: 0 4px 0 rgba(20, 17, 11, 0.16);
+}
+.banda b {
+  background: var(--rojo);
+  padding: 10px 15px 8px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+.banda i {
+  background: var(--tinta);
+  padding: 10px 15px 8px;
+  font-size: 14px;
+  letter-spacing: 0.09em;
+  font-style: normal;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---------- the story ---------- */
+.nota {
+  background: var(--papel);
+  border: 3px solid var(--tinta);
+  padding: 30px clamp(20px, 5vw, 40px) 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.titular {
+  font-family: var(--font-display), "Century Gothic", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(29px, 6.4vw, 44px);
+  line-height: 1.03;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  margin: 0;
+}
+.bajada {
+  font-style: italic;
+  font-size: clamp(17px, 2.3vw, 19px);
+  line-height: 1.45;
+  color: var(--tinta-suave);
+  border-left: 5px solid var(--amarillo-hondo);
+  padding-left: 15px;
+  margin: 0;
+  text-wrap: pretty;
+}
+.cuerpo { margin: 0; max-width: 62ch; text-wrap: pretty; }
+.cita {
+  font-family: var(--font-display), "Century Gothic", system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(19px, 3.4vw, 25px);
+  line-height: 1.2;
+  text-align: center;
+  margin: 6px 0;
+  padding: 16px 10px;
+  border-top: 3px solid var(--tinta);
+  border-bottom: 3px solid var(--tinta);
+  text-wrap: balance;
+}
+.cita small {
+  display: block;
+  font-family: var(--font-chyron), Arial, sans-serif;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-top: 9px;
+}
+
+/* ---------- details / chyrons ---------- */
+.datos { display: flex; flex-direction: column; align-items: flex-start; }
+.datosTitulo {
+  font-family: var(--font-chyron), Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--tinta);
+  color: var(--amarillo);
+  padding: 9px 16px 7px;
+  margin: 0;
+  border: 3px solid var(--tinta);
+  border-bottom: none;
+}
+.datosLista {
+  margin: 0;
+  width: 100%;
+  border: 3px solid var(--tinta);
+  background: var(--amarillo-hondo);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+.chy { display: flex; background: var(--tinta); color: #fff; }
+.chy dt {
+  font-family: var(--font-chyron), Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  background: var(--amarillo);
+  color: var(--tinta);
+  padding: 15px 14px;
+  flex: 0 0 158px;
+  display: flex;
+  align-items: center;
+  line-height: 1.15;
+}
+.chy dd {
+  margin: 0;
+  padding: 13px 16px;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-chyron), Arial, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: var(--amarillo);
+}
+.cierre {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--tinta-suave);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+@media (max-width: 560px) {
+  .chy { flex-direction: column; }
+  .chy dt { flex: 0 0 auto; }
+  .banda { flex-direction: column; }
+  .banda b { white-space: normal; }
+}
